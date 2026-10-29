@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farmacia Norte | Salud con claridad</title>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta: gris perla #f1f1ef · negro suave #1a1a1a · burdeos #8a1c2b · gris medio #6e6e6a · blanco #fff */
+  body{font-family:'Karla',sans-serif;font-weight:300;background:#f1f1ef;color:#1a1a1a;line-height:1.75;font-size:1.05rem}
+  h1,h2,h3,.jost{font-family:'Jost',sans-serif;font-weight:300;letter-spacing:-.01em}
+  .muted{color:#6e6e6a}
+  .wine{color:#8a1c2b}
+  .btn-w{display:inline-block;background:#8a1c2b;color:#fff;padding:.9rem 2rem;font-family:'Jost';font-weight:400;letter-spacing:.02em;border-radius:4px;transition:background .25s}
+  .btn-w:hover{background:#1a1a1a}
+  .btn-t{display:inline-block;padding:.9rem 0;font-family:'Jost';font-weight:400;border-bottom:1px solid #1a1a1a;transition:color .25s,border-color .25s}
+  .btn-t:hover{color:#8a1c2b;border-color:#8a1c2b}
+  .nl{font-family:'Jost';font-weight:400;padding:.3rem 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+  .nl:hover{color:#8a1c2b}.nl.active{border-color:#8a1c2b;color:#8a1c2b}
+  .field{width:100%;border:0;background:#fff;border-radius:4px;padding:1rem 1.1rem;font-weight:300}
+  .field:focus{outline:2px solid #8a1c2b;outline-offset:2px}
+  a:focus-visible,button:focus-visible{outline:2px solid #8a1c2b;outline-offset:4px}
+  .soc{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;background:#fff;transition:background .2s,color .2s}
+  .soc:hover{background:#8a1c2b;color:#fff}
+  .page{animation:fade .4s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.page{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="px-6 md:px-12 py-7">
+  <div class="max-w-6xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center relative">
+    <nav id="left" class="hidden md:flex gap-8" aria-label="Izquierda"></nav>
+    <button id="burger" class="md:hidden text-3xl leading-none justify-self-start" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    <a href="#inicio" class="jost text-3xl font-light flex items-center gap-2 md:col-start-2"><i class="bi bi-plus-lg wine"></i>Norte</a>
+    <nav id="right" class="hidden md:flex gap-8 justify-end" aria-label="Derecha"></nav>
+    <nav id="menu" class="hidden absolute top-full left-0 right-0 mt-5 bg-white p-6 grid gap-3 text-center shadow-sm" aria-label="Menú móvil"></nav>
+  </div>
+</header>
+
+<main>
+
+<!-- INICIO -->
+<section id="inicio" class="page">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 pt-6">
+    <div class="h-[320px] md:h-[520px] bg-[#dcdcd8] overflow-hidden rounded-[6px]"><img class="w-full h-full object-cover" alt="Mostrador luminoso de farmacia" src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1800&q=70" onerror="this.style.display='none'"></div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-20 row g-5">
+    <div class="col-lg-7"><h1 class="text-5xl md:text-7xl leading-[1.05]">Salud con claridad, en un espacio sin prisa.</h1></div>
+    <div class="col-lg-5 flex flex-col justify-end gap-6">
+      <p class="muted">Dispensamos medicamentos, orientamos tratamientos y cuidamos la piel con una selección corta y honesta de productos.</p>
+      <div class="flex flex-wrap gap-8 items-center"><a href="#contacto" class="btn-w">Pedir cita</a><a href="#servicios" class="btn-t">Servicios</a></div>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 md:px-12 pb-24 row g-5">
+    <div class="col-md-4"><h3 class="text-2xl mb-2">Escucha primero</h3><p class="muted">Cada consulta empieza con preguntas, no con una caja del estante.</p></div>
+    <div class="col-md-4"><h3 class="text-2xl mb-2">Catálogo corto</h3><p class="muted">Menos marcas, todas con respaldo clínico y precios claros.</p></div>
+    <div class="col-md-4"><h3 class="text-2xl mb-2">Entrega sin fricción</h3><p class="muted">Recoge en tienda o recíbelo en tu puerta al día siguiente.</p></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="page hidden">
+  <div class="max-w-5xl mx-auto px-6 md:px-12 py-16">
+    <h2 class="text-5xl md:text-6xl mb-4">Servicios</h2>
+    <p class="muted max-w-lg mb-16">Seis cosas que hacemos bien.</p>
+    <div class="row g-5">
+      <div class="col-md-6"><i class="bi bi-prescription2 text-2xl wine"></i><h3 class="text-3xl mt-3 mb-2">Dispensación</h3><p class="muted">Recetas médicas y electrónicas, con explicación de cada pauta.</p></div>
+      <div class="col-md-6"><i class="bi bi-activity text-2xl wine"></i><h3 class="text-3xl mt-3 mb-2">Controles</h3><p class="muted">Tensión, glucosa y colesterol en una sala privada.</p></div>
+      <div class="col-md-6"><i class="bi bi-calendar-check text-2xl wine"></i><h3 class="text-3xl mt-3 mb-2">Seguimiento</h3><p class="muted">Revisión periódica de tu medicación crónica.</p></div>
+      <div class="col-md-6"><i class="bi bi-droplet-half text-2xl wine"></i><h3 class="text-3xl mt-3 mb-2">Dermofarmacia</h3><p class="muted">Diagnóstico de piel y rutina personalizada.</p></div>
+      <div class="col-md-6"><i class="bi bi-box-seam text-2xl wine"></i><h3 class="text-3xl mt-3 mb-2">Pastilleros</h3><p class="muted">Preparación semanal de dosis para mayores.</p></div>
+      <div class="col-md-6"><i class="bi bi-truck text-2xl wine"></i><h3 class="text-3xl mt-3 mb-2">Entrega</h3><p class="muted">Pedidos a domicilio en toda la ciudad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="page hidden">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-16">
+    <h2 class="text-5xl md:text-6xl mb-14">Productos</h2>
+    <div class="row g-5">
+      <div class="col-md-4"><div class="aspect-[4/5] bg-white overflow-hidden rounded-[6px] mb-4"><img class="w-full h-full object-cover" alt="Suplementos" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=70" onerror="this.style.display='none'"></div><h3 class="text-2xl">Omega 3</h3><p class="muted">60 cápsulas · 15,90 €</p></div>
+      <div class="col-md-4"><div class="aspect-[4/5] bg-white overflow-hidden rounded-[6px] mb-4"><img class="w-full h-full object-cover" alt="Cuidado de la piel" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=70" onerror="this.style.display='none'"></div><h3 class="text-2xl">Limpiador suave</h3><p class="muted">200 ml · 11,50 €</p></div>
+      <div class="col-md-4"><div class="aspect-[4/5] bg-white overflow-hidden rounded-[6px] mb-4"><img class="w-full h-full object-cover" alt="Medicamentos" src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=800&q=70" onerror="this.style.display='none'"></div><h3 class="text-2xl">Pastillero semanal</h3><p class="muted">7 días · 6,90 €</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="page hidden">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-16 row g-5 align-items-center">
+    <div class="col-lg-6"><div class="h-[420px] bg-[#dcdcd8] rounded-[6px] overflow-hidden"><img class="w-full h-full object-cover" alt="Equipo de la farmacia" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1000&q=70" onerror="this.style.display='none'"></div></div>
+    <div class="col-lg-6"><h2 class="text-5xl mb-6">Nosotros</h2><p class="muted mb-4">Farmacia Norte nació en 2009 de la idea de que una farmacia puede ser un lugar calmado. Somos cuatro farmacéuticos con formación en atención al paciente.</p><p class="muted">Trabajamos con pocos proveedores, revisamos cada producto y preferimos recomendar menos pero mejor.</p></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="page hidden">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 py-16 row g-5">
+    <div class="col-lg-5">
+      <h2 class="text-5xl mb-8">Contacto</h2>
+      <p class="muted mb-1">Avenida del Norte 58, Valladolid</p>
+      <p class="muted mb-1">+34 983 600 700</p>
+      <p class="muted mb-1">hola@farmacianorte.example</p>
+      <p class="muted mb-8">Lunes a viernes, 9:00 a 20:30</p>
+      <div class="flex gap-3">
+        <a class="soc" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a class="soc" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a class="soc" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a class="soc" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="col-lg-7 grid gap-4">
+      <input class="field" placeholder="Nombre" aria-label="Nombre">
+      <input class="field" type="email" placeholder="Correo electrónico" aria-label="Correo">
+      <textarea class="field" rows="5" placeholder="Mensaje" aria-label="Mensaje"></textarea>
+      <button type="button" class="btn-w justify-self-start" onclick="this.textContent='Mensaje enviado'">Enviar</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="px-6 md:px-12 py-10 text-center text-sm muted">© 2026 Farmacia Norte. Sitio de demostración.</footer>
+
+<script>
+  const L=[['inicio','Inicio'],['servicios','Servicios'],['productos','Productos']],R=[['nosotros','Nosotros'],['contacto','Contacto']];
+  const link=([i,t])=>`<a class="nl" data-nav="${i}" href="#${i}">${t}</a>`;
+  document.getElementById('left').innerHTML=L.map(link).join('');
+  document.getElementById('right').innerHTML=R.map(link).join('');
+  const m=document.getElementById('menu'),b=document.getElementById('burger');
+  m.innerHTML=[...L,...R].map(link).join('');
+  function setMenu(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',o);b.innerHTML=o?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'}
+  b.addEventListener('click',()=>setMenu(m.classList.contains('hidden')));
+  const pages=[...document.querySelectorAll('.page')];
+  function go(){const h=(location.hash||'#inicio').slice(1),t=pages.some(p=>p.id===h)?h:'inicio';
+    pages.forEach(p=>p.classList.toggle('hidden',p.id!==t));
+    document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===t));
+    setMenu(false);scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+</script>
+</body>
+</html>

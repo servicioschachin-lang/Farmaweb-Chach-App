@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farmacia Lumen | Cuidado diario</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta atardecer: violeta #3b1070 · magenta #db2777 · naranja #f59e0b · rosa claro #ffe4f1 · noche #1c0836 */
+  body{font-family:'Sora',sans-serif;color:#fff;min-height:100vh;background:linear-gradient(160deg,#1c0836 0%,#3b1070 35%,#a21caf 70%,#f97316 120%) fixed}
+  .orb{position:fixed;border-radius:50%;filter:blur(80px);z-index:-1;opacity:.6}
+  .glass{background:rgba(255,255,255,.13);backdrop-filter:blur(20px) saturate(170%);-webkit-backdrop-filter:blur(20px) saturate(170%);border:1px solid rgba(255,255,255,.3);box-shadow:0 12px 40px rgba(20,0,40,.35),inset 0 1px 0 rgba(255,255,255,.35);border-radius:22px}
+  .btn-sun{background:linear-gradient(120deg,#f59e0b,#db2777);color:#fff;font-weight:600;border-radius:14px;padding:.85rem 1.5rem;display:inline-block;transition:transform .2s,filter .2s}
+  .btn-sun:hover{transform:translateY(-2px);filter:brightness(1.1)}
+  .navlink{padding:.5rem .9rem;border-radius:12px;transition:background .2s}
+  .navlink:hover,.navlink.active{background:rgba(255,255,255,.2)}
+  .field{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:14px;color:#fff;padding:.8rem 1rem;width:100%}
+  .field::placeholder{color:rgba(255,255,255,.65)}
+  .field:focus{outline:2px solid #f59e0b;outline-offset:2px}
+  .soc{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;transition:transform .2s,background .2s}
+  .soc:hover{background:rgba(245,158,11,.5);transform:translateY(-3px)}
+  a:focus-visible,button:focus-visible{outline:2px solid #f59e0b;outline-offset:3px}
+  .page{animation:in .35s ease}
+  @keyframes in{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion:reduce){.page{animation:none}}
+</style>
+</head>
+<body>
+<div class="orb w-80 h-80 bg-fuchsia-500 -top-20 right-0"></div>
+<div class="orb w-72 h-72 bg-orange-400 bottom-10 -left-16"></div>
+
+<header class="sticky top-0 z-50 p-3">
+  <div class="glass max-w-6xl mx-auto px-4 py-2 flex items-center justify-between relative">
+    <nav class="hidden md:flex gap-1" aria-label="Principal">
+      <a class="navlink" data-nav="inicio" href="#inicio">Inicio</a>
+      <a class="navlink" data-nav="servicios" href="#servicios">Servicios</a>
+    </nav>
+    <a href="#inicio" class="font-bold text-2xl tracking-tight flex items-center gap-2"><i class="bi bi-brightness-high-fill text-amber-300"></i>Lumen</a>
+    <nav class="hidden md:flex gap-1" aria-label="Secundario">
+      <a class="navlink" data-nav="productos" href="#productos">Productos</a>
+      <a class="navlink" data-nav="nosotros" href="#nosotros">Nosotros</a>
+      <a class="navlink" data-nav="contacto" href="#contacto">Contacto</a>
+    </nav>
+    <button id="burger" class="md:hidden text-3xl leading-none order-first" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    <span class="md:hidden w-8"></span>
+    <nav id="menu" class="hidden md:hidden absolute top-full left-0 right-0 mt-2 glass p-3 grid gap-1">
+      <a class="navlink" data-nav="inicio" href="#inicio">Inicio</a>
+      <a class="navlink" data-nav="servicios" href="#servicios">Servicios</a>
+      <a class="navlink" data-nav="productos" href="#productos">Productos</a>
+      <a class="navlink" data-nav="nosotros" href="#nosotros">Nosotros</a>
+      <a class="navlink" data-nav="contacto" href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-6xl mx-auto px-4 pb-16">
+
+<!-- INICIO -->
+<section id="inicio" class="page pt-6">
+  <div class="relative rounded-[32px] overflow-hidden min-h-[520px] flex items-end bg-gradient-to-br from-fuchsia-700 to-orange-500">
+    <img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=1800&q=70" alt="Estantería de medicamentos en la farmacia" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+    <div class="absolute inset-0 bg-gradient-to-t from-[#1c0836]/90 via-[#3b1070]/40 to-transparent"></div>
+    <div class="relative p-6 md:p-12 w-full row align-items-end g-4 m-0">
+      <div class="col-lg-7">
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4">Una farmacia que cuida tu día, de la mañana a la noche</h1>
+        <p class="text-pink-100 mb-6 max-w-lg">Consejo profesional, productos de confianza y entrega rápida en tu barrio.</p>
+        <a href="#servicios" class="btn-sun me-2">Explorar servicios</a>
+        <a href="#contacto" class="glass inline-block px-5 py-3 font-semibold" style="border-radius:14px">Contactar</a>
+      </div>
+      <div class="col-lg-5">
+        <div class="glass p-4 grid grid-cols-2 gap-3 text-center">
+          <div><i class="bi bi-clock-history text-2xl text-amber-300"></i><p class="font-semibold mt-1">8:00 a 23:00</p><p class="text-xs text-pink-100/80">Todos los días</p></div>
+          <div><i class="bi bi-bicycle text-2xl text-amber-300"></i><p class="font-semibold mt-1">En 60 min</p><p class="text-xs text-pink-100/80">Entrega local</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row g-4 mt-1">
+    <div class="col-md-4"><div class="glass p-5 h-100"><i class="bi bi-shield-check text-3xl text-amber-300"></i><h3 class="font-semibold text-lg mt-2">Productos verificados</h3><p class="text-pink-100/80 text-sm">Trabajamos solo con laboratorios y distribuidores autorizados.</p></div></div>
+    <div class="col-md-4"><div class="glass p-5 h-100"><i class="bi bi-chat-heart text-3xl text-amber-300"></i><h3 class="font-semibold text-lg mt-2">Consejo sin prisa</h3><p class="text-pink-100/80 text-sm">Resolvemos dudas sobre tratamientos, dosis y alergias.</p></div></div>
+    <div class="col-md-4"><div class="glass p-5 h-100"><i class="bi bi-phone text-3xl text-amber-300"></i><h3 class="font-semibold text-lg mt-2">Pide desde el móvil</h3><p class="text-pink-100/80 text-sm">Envía tu receta por WhatsApp y recógela lista.</p></div></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="page hidden pt-10">
+  <h2 class="text-4xl font-bold mb-2">Servicios</h2>
+  <p class="text-pink-100/80 mb-8 max-w-xl">Todo lo que podemos hacer por ti en el mostrador o en casa.</p>
+  <div class="row g-4">
+    <div class="col-md-6"><div class="glass p-5 flex gap-4 h-100"><i class="bi bi-prescription2 text-4xl text-amber-300"></i><div><h3 class="font-semibold text-lg">Receta electrónica</h3><p class="text-pink-100/80 text-sm">Dispensación inmediata con tu tarjeta sanitaria.</p></div></div></div>
+    <div class="col-md-6"><div class="glass p-5 flex gap-4 h-100"><i class="bi bi-activity text-4xl text-amber-300"></i><div><h3 class="font-semibold text-lg">Análisis rápidos</h3><p class="text-pink-100/80 text-sm">Colesterol, glucosa y tensión arterial en minutos.</p></div></div></div>
+    <div class="col-md-6"><div class="glass p-5 flex gap-4 h-100"><i class="bi bi-calendar2-check text-4xl text-amber-300"></i><div><h3 class="font-semibold text-lg">Seguimiento de tratamientos</h3><p class="text-pink-100/80 text-sm">Recordatorios de tomas y revisión de adherencia.</p></div></div></div>
+    <div class="col-md-6"><div class="glass p-5 flex gap-4 h-100"><i class="bi bi-person-hearts text-4xl text-amber-300"></i><div><h3 class="font-semibold text-lg">Nutrición y bienestar</h3><p class="text-pink-100/80 text-sm">Orientación sobre complementos y hábitos saludables.</p></div></div></div>
+    <div class="col-md-6"><div class="glass p-5 flex gap-4 h-100"><i class="bi bi-balloon-heart text-4xl text-amber-300"></i><div><h3 class="font-semibold text-lg">Salud infantil</h3><p class="text-pink-100/80 text-sm">Dosificación pediátrica y cuidado del bebé.</p></div></div></div>
+    <div class="col-md-6"><div class="glass p-5 flex gap-4 h-100"><i class="bi bi-recycle text-4xl text-amber-300"></i><div><h3 class="font-semibold text-lg">Punto de reciclaje</h3><p class="text-pink-100/80 text-sm">Entrega envases y medicamentos caducados con seguridad.</p></div></div></div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="page hidden pt-10">
+  <h2 class="text-4xl font-bold mb-8">Productos destacados</h2>
+  <div class="row g-4">
+    <div class="col-6 col-lg-3"><article class="glass overflow-hidden h-100"><div class="h-40 bg-gradient-to-br from-orange-400/60 to-fuchsia-500/60"><img class="w-full h-full object-cover" alt="Vitamina C" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><div class="p-3"><h3 class="font-semibold">Vitamina C 1000 mg</h3><p class="text-amber-300 font-semibold">8,50 €</p></div></article></div>
+    <div class="col-6 col-lg-3"><article class="glass overflow-hidden h-100"><div class="h-40 bg-gradient-to-br from-fuchsia-500/60 to-violet-600/60"><img class="w-full h-full object-cover" alt="Crema hidratante" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><div class="p-3"><h3 class="font-semibold">Crema hidratante</h3><p class="text-amber-300 font-semibold">12,90 €</p></div></article></div>
+    <div class="col-6 col-lg-3"><article class="glass overflow-hidden h-100"><div class="h-40 bg-gradient-to-br from-violet-600/60 to-orange-400/60"><img class="w-full h-full object-cover" alt="Analgésico" src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><div class="p-3"><h3 class="font-semibold">Analgésico 20 comp.</h3><p class="text-amber-300 font-semibold">3,40 €</p></div></article></div>
+    <div class="col-6 col-lg-3"><article class="glass overflow-hidden h-100"><div class="h-40 bg-gradient-to-br from-orange-400/60 to-violet-600/60"><img class="w-full h-full object-cover" alt="Probióticos" src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><div class="p-3"><h3 class="font-semibold">Probióticos 30 cáps.</h3><p class="text-amber-300 font-semibold">16,20 €</p></div></article></div>
+  </div>
+  <p class="text-pink-100/70 text-sm mt-6">Precios orientativos. Algunos productos requieren consejo farmacéutico.</p>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="page hidden pt-10">
+  <div class="row g-4 align-items-center">
+    <div class="col-lg-6"><div class="glass p-2"><div class="rounded-[18px] overflow-hidden h-80 bg-gradient-to-br from-fuchsia-600/50 to-orange-400/50"><img class="w-full h-full object-cover" alt="Equipo de farmacéuticos" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1000&q=70" onerror="this.style.display='none'"></div></div></div>
+    <div class="col-lg-6"><h2 class="text-4xl font-bold mb-4">Treinta años cuidando al barrio</h2><p class="text-pink-100/85 mb-3">Lumen nació como una pequeña botica familiar. Hoy somos un equipo de siete farmacéuticos y técnicos que conocen a sus clientes por su nombre.</p><p class="text-pink-100/85">Creemos que una buena farmacia escucha primero y recomienda después.</p></div>
+  </div>
+  <div class="row g-4 mt-2">
+    <div class="col-md-4"><div class="glass p-5 text-center"><i class="bi bi-person-circle text-5xl text-amber-300"></i><h3 class="font-semibold mt-2">Dra. Elena Vidal</h3><p class="text-sm text-pink-100/80">Titular y directora técnica</p></div></div>
+    <div class="col-md-4"><div class="glass p-5 text-center"><i class="bi bi-person-circle text-5xl text-amber-300"></i><h3 class="font-semibold mt-2">Dr. Mateo Ríos</h3><p class="text-sm text-pink-100/80">Farmacéutico adjunto</p></div></div>
+    <div class="col-md-4"><div class="glass p-5 text-center"><i class="bi bi-person-circle text-5xl text-amber-300"></i><h3 class="font-semibold mt-2">Sofía Navarro</h3><p class="text-sm text-pink-100/80">Técnica en dermocosmética</p></div></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="page hidden pt-10">
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <div class="glass p-6 h-100">
+        <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+        <p class="mb-2"><i class="bi bi-geo-alt-fill text-amber-300"></i> Calle del Sol 45, Madrid</p>
+        <p class="mb-2"><i class="bi bi-telephone-fill text-amber-300"></i> +34 911 222 333</p>
+        <p class="mb-2"><i class="bi bi-envelope-fill text-amber-300"></i> hola@farmacialumen.example</p>
+        <p class="mb-5"><i class="bi bi-clock-fill text-amber-300"></i> Lun–Dom 8:00–23:00</p>
+        <div class="flex gap-2">
+          <a class="soc glass" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="soc glass" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="soc glass" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a class="soc glass" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a class="soc glass" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <div class="glass p-6 grid gap-3">
+        <input class="field" placeholder="Tu nombre" aria-label="Nombre">
+        <input class="field" type="tel" placeholder="Teléfono" aria-label="Teléfono">
+        <textarea class="field" rows="5" placeholder="Cuéntanos qué necesitas" aria-label="Mensaje"></textarea>
+        <button class="btn-sun justify-self-start" type="button" onclick="this.textContent='¡Recibido! Te llamamos pronto'">Enviar consulta</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="glass max-w-6xl mx-auto mb-4 px-5 py-4 flex flex-wrap items-center justify-between gap-3 text-sm text-pink-100/80">
+  <span>© 2026 Farmacia Lumen. Sitio de demostración.</span>
+  <span class="flex gap-3 text-xl"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a></span>
+</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  function setMenu(open){m.classList.toggle('hidden',!open);b.setAttribute('aria-expanded',open);b.innerHTML=open?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'}
+  b.addEventListener('click',()=>setMenu(m.classList.contains('hidden')));
+  const pages=[...document.querySelectorAll('.page')];
+  function go(){const h=(location.hash||'#inicio').slice(1),t=pages.some(p=>p.id===h)?h:'inicio';
+    pages.forEach(p=>p.classList.toggle('hidden',p.id!==t));
+    document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===t));
+    setMenu(false);scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+</script>
+</body>
+</html>

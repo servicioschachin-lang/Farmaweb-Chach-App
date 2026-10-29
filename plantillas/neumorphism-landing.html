@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FarmaSuave | Tu farmacia de confianza</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta: base #e0e5ec · sombra oscura #a3b1c6 · luz #ffffff · texto #3d4a5c · turquesa #0d9488 */
+  :root{--base:#e0e5ec;--dk:#a3b1c6;--lt:#ffffff;--ink:#3d4a5c;--acc:#0d9488}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',sans-serif;background:var(--base);color:var(--ink)}
+  .raise{background:var(--base);border-radius:28px;box-shadow:10px 10px 22px var(--dk),-10px -10px 22px var(--lt)}
+  .raise-sm{background:var(--base);border-radius:16px;box-shadow:5px 5px 11px var(--dk),-5px -5px 11px var(--lt)}
+  .press{background:var(--base);border-radius:18px;box-shadow:inset 6px 6px 12px var(--dk),inset -6px -6px 12px var(--lt)}
+  .nbtn{background:var(--base);border-radius:999px;padding:.85rem 1.8rem;font-weight:800;color:var(--acc);box-shadow:7px 7px 15px var(--dk),-7px -7px 15px var(--lt);transition:box-shadow .15s,transform .15s}
+  .nbtn:hover{transform:translateY(-1px)}
+  .nbtn:active{box-shadow:inset 5px 5px 10px var(--dk),inset -5px -5px 10px var(--lt);transform:none}
+  .ic{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;color:var(--acc);box-shadow:inset 5px 5px 10px var(--dk),inset -5px -5px 10px var(--lt)}
+  .field{background:var(--base);border:0;border-radius:16px;padding:.9rem 1.1rem;width:100%;color:var(--ink);box-shadow:inset 5px 5px 10px var(--dk),inset -5px -5px 10px var(--lt)}
+  .field:focus{outline:2px solid var(--acc);outline-offset:3px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--acc);outline-offset:4px}
+  .ring{border-radius:50%;padding:18px;background:var(--base);box-shadow:14px 14px 30px var(--dk),-14px -14px 30px var(--lt)}
+  .ring>div{border-radius:50%;overflow:hidden;box-shadow:inset 8px 8px 16px var(--dk),inset -8px -8px 16px var(--lt);background:linear-gradient(135deg,#c9d3e0,#b4e0db)}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="sticky top-0 z-50 px-4 py-4" style="background:var(--base)">
+  <div class="raise max-w-6xl mx-auto px-6 py-3 flex items-center justify-between relative" style="border-radius:22px">
+    <a href="#inicio" class="flex items-center gap-2 text-2xl font-black"><span class="ic !w-11 !h-11 !text-xl"><i class="bi bi-plus-lg"></i></span>FarmaSuave</a>
+    <nav id="menu" class="hidden md:flex gap-8 font-bold flex-col md:flex-row absolute md:static top-full left-0 right-0 mt-4 md:mt-0 p-5 md:p-0 raise md:!shadow-none text-center md:!bg-transparent" style="border-radius:22px">
+      <a class="py-2 hover:text-teal-700" href="#servicios">Servicios</a>
+      <a class="py-2 hover:text-teal-700" href="#productos">Productos</a>
+      <a class="py-2 hover:text-teal-700" href="#pasos">Cómo pedir</a>
+      <a class="py-2 hover:text-teal-700" href="#faq">Preguntas</a>
+      <a class="py-2 hover:text-teal-700" href="#contacto">Contacto</a>
+    </nav>
+    <button id="burger" class="md:hidden raise-sm w-11 h-11 grid place-items-center text-2xl" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="px-4 pt-10 pb-20">
+  <div class="max-w-6xl mx-auto row align-items-center g-5">
+    <div class="col-lg-6 order-2 order-lg-1">
+      <h1 class="text-5xl md:text-6xl font-black leading-[1.08] mb-5">Medicinas y consejo, con un trato suave</h1>
+      <p class="text-lg mb-8 max-w-lg" style="color:#586579">Resolvemos tus dudas, preparamos tu pedido y te lo dejamos listo para recoger o en la puerta de casa.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#contacto" class="nbtn">Hacer un pedido</a>
+        <a href="#servicios" class="nbtn" style="color:var(--ink)">Conocer servicios</a>
+      </div>
+      <div class="flex gap-4 mt-10">
+        <div class="press px-5 py-3 text-center"><b class="text-2xl block">12 000</b><span class="text-sm">productos</span></div>
+        <div class="press px-5 py-3 text-center"><b class="text-2xl block">7 días</b><span class="text-sm">a la semana</span></div>
+        <div class="press px-5 py-3 text-center"><b class="text-2xl block">4,9 / 5</b><span class="text-sm">valoración</span></div>
+      </div>
+    </div>
+    <div class="col-lg-6 order-1 order-lg-2 flex justify-center">
+      <div class="ring w-[300px] h-[300px] md:w-[420px] md:h-[420px]"><div class="w-full h-full"><img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=900&q=70" alt="Farmacéutica sonriendo en el mostrador" class="w-full h-full object-cover" onerror="this.style.display='none'"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="px-4 py-16">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-black mb-10 text-center">Servicios al alcance de la mano</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3"><div class="raise p-6 h-100 text-center"><div class="ic mx-auto mb-4"><i class="bi bi-capsule"></i></div><h3 class="font-extrabold text-xl mb-2">Medicamentos</h3><p style="color:#586579">Con y sin receta, con revisión de interacciones.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="raise p-6 h-100 text-center"><div class="ic mx-auto mb-4"><i class="bi bi-thermometer-half"></i></div><h3 class="font-extrabold text-xl mb-2">Mediciones</h3><p style="color:#586579">Temperatura, tensión, glucosa y peso en el momento.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="raise p-6 h-100 text-center"><div class="ic mx-auto mb-4"><i class="bi bi-flower1"></i></div><h3 class="font-extrabold text-xl mb-2">Dermocosmética</h3><p style="color:#586579">Cuidado facial y corporal para cada tipo de piel.</p></div></div>
+      <div class="col-md-6 col-lg-3"><div class="raise p-6 h-100 text-center"><div class="ic mx-auto mb-4"><i class="bi bi-house-heart"></i></div><h3 class="font-extrabold text-xl mb-2">Envío a casa</h3><p style="color:#586579">Pedidos entregados el mismo día en tu zona.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="px-4 py-16">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-10">
+      <h2 class="text-4xl font-black">Productos populares</h2>
+      <div class="press flex items-center px-4 gap-2 w-full md:w-80"><i class="bi bi-search"></i><input class="field !shadow-none !px-1" placeholder="Buscar producto" aria-label="Buscar producto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4"><article class="raise p-4 h-100"><div class="press h-44 overflow-hidden mb-4 bg-gradient-to-br from-slate-300 to-teal-100"><img class="w-full h-full object-cover" alt="Vitaminas" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><h3 class="font-extrabold text-lg">Multivitamínico diario</h3><div class="flex justify-between items-center mt-2"><b class="text-teal-700 text-lg">9,90 €</b><button class="nbtn !py-2 !px-4 text-sm">Añadir</button></div></article></div>
+      <div class="col-md-4"><article class="raise p-4 h-100"><div class="press h-44 overflow-hidden mb-4 bg-gradient-to-br from-slate-300 to-teal-100"><img class="w-full h-full object-cover" alt="Cuidado de piel" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><h3 class="font-extrabold text-lg">Sérum hidratante</h3><div class="flex justify-between items-center mt-2"><b class="text-teal-700 text-lg">18,50 €</b><button class="nbtn !py-2 !px-4 text-sm">Añadir</button></div></article></div>
+      <div class="col-md-4"><article class="raise p-4 h-100"><div class="press h-44 overflow-hidden mb-4 bg-gradient-to-br from-slate-300 to-teal-100"><img class="w-full h-full object-cover" alt="Analgésicos" src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><h3 class="font-extrabold text-lg">Botiquín de viaje</h3><div class="flex justify-between items-center mt-2"><b class="text-teal-700 text-lg">14,00 €</b><button class="nbtn !py-2 !px-4 text-sm">Añadir</button></div></article></div>
+    </div>
+  </div>
+</section>
+
+<!-- PASOS (secuencia real) -->
+<section id="pasos" class="px-4 py-16">
+  <div class="max-w-5xl mx-auto raise p-8 md:p-12">
+    <h2 class="text-4xl font-black mb-8 text-center">Cómo pedir en tres pasos</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4"><div class="ic mx-auto mb-3 font-black">1</div><h3 class="font-extrabold text-lg">Envía tu lista</h3><p style="color:#586579">Por la web, WhatsApp o foto de la receta.</p></div>
+      <div class="col-md-4"><div class="ic mx-auto mb-3 font-black">2</div><h3 class="font-extrabold text-lg">Confirmamos</h3><p style="color:#586579">Revisamos stock y te avisamos del total.</p></div>
+      <div class="col-md-4"><div class="ic mx-auto mb-3 font-black">3</div><h3 class="font-extrabold text-lg">Recoge o recibe</h3><p style="color:#586579">En el mostrador o en tu domicilio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="px-4 py-16">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl font-black mb-8 text-center">Preguntas frecuentes</h2>
+    <details class="raise-sm p-5 mb-4"><summary class="font-extrabold cursor-pointer">¿Necesito receta para todos los medicamentos?</summary><p class="mt-3" style="color:#586579">No. Algunos son de venta libre, pero otros solo se dispensan con receta médica.</p></details>
+    <details class="raise-sm p-5 mb-4"><summary class="font-extrabold cursor-pointer">¿Cuánto cuesta el envío a domicilio?</summary><p class="mt-3" style="color:#586579">Es gratuito en pedidos superiores a 25 € dentro de la zona de reparto.</p></details>
+    <details class="raise-sm p-5"><summary class="font-extrabold cursor-pointer">¿Puedo devolver un producto?</summary><p class="mt-3" style="color:#586579">Los productos sin abrir y de parafarmacia se pueden devolver en 14 días con el ticket.</p></details>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="px-4 py-16">
+  <div class="max-w-5xl mx-auto raise p-8 md:p-12 row g-5 m-0">
+    <div class="col-md-5">
+      <h2 class="text-4xl font-black mb-4">Hablemos</h2>
+      <p class="mb-2"><i class="bi bi-geo-alt text-teal-700"></i> Plaza Mayor 8, Valencia</p>
+      <p class="mb-2"><i class="bi bi-telephone text-teal-700"></i> +34 960 111 222</p>
+      <p class="mb-6"><i class="bi bi-clock text-teal-700"></i> Lun–Sáb 9:00–21:30</p>
+      <div class="flex gap-3">
+        <a class="raise-sm w-11 h-11 grid place-items-center text-xl" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a class="raise-sm w-11 h-11 grid place-items-center text-xl" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a class="raise-sm w-11 h-11 grid place-items-center text-xl" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a class="raise-sm w-11 h-11 grid place-items-center text-xl" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+    <div class="col-md-7 grid gap-4">
+      <input class="field" placeholder="Nombre" aria-label="Nombre">
+      <input class="field" type="email" placeholder="Correo" aria-label="Correo">
+      <textarea class="field" rows="4" placeholder="Mensaje" aria-label="Mensaje"></textarea>
+      <button type="button" class="nbtn justify-self-start" onclick="this.textContent='Mensaje enviado'">Enviar</button>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center py-10 text-sm" style="color:#586579">© 2026 FarmaSuave. Sitio de demostración. Ante cualquier duda, consulte a su farmacéutico.</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.addEventListener('click',()=>{const c=m.classList.toggle('hidden');b.setAttribute('aria-expanded',!c);b.innerHTML=c?'<i class="bi bi-list"></i>':'<i class="bi bi-x-lg"></i>'});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<768){m.classList.add('hidden');b.innerHTML='<i class="bi bi-list"></i>'}}));
+</script>
+</body>
+</html>

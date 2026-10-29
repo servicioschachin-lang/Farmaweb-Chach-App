@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farmacia Vita Hogar | Salud para toda la familia</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta: arena #e8e2da · sombra #bcb2a4 · luz #fffdf9 · marino #1d3557 · rojo cruz #e63946 */
+  :root{--base:#e8e2da;--dk:#bcb2a4;--lt:#fffdf9;--navy:#1d3557;--red:#e63946}
+  body{font-family:'Lexend',sans-serif;background:var(--base);color:var(--navy)}
+  .raise{background:var(--base);border-radius:24px;box-shadow:9px 9px 18px var(--dk),-9px -9px 18px var(--lt)}
+  .raise-sm{background:var(--base);border-radius:14px;box-shadow:5px 5px 10px var(--dk),-5px -5px 10px var(--lt)}
+  .press{background:var(--base);border-radius:16px;box-shadow:inset 5px 5px 10px var(--dk),inset -5px -5px 10px var(--lt)}
+  .nbtn{background:var(--base);border-radius:14px;padding:.8rem 1.5rem;font-weight:600;color:var(--red);box-shadow:6px 6px 12px var(--dk),-6px -6px 12px var(--lt);transition:box-shadow .15s}
+  .nbtn:active{box-shadow:inset 4px 4px 8px var(--dk),inset -4px -4px 8px var(--lt)}
+  .side a{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;border-radius:14px;font-weight:500;transition:box-shadow .15s}
+  .side a:hover{color:var(--red)}
+  .side a.active{color:var(--red);box-shadow:inset 4px 4px 8px var(--dk),inset -4px -4px 8px var(--lt)}
+  .field{background:var(--base);border:0;border-radius:14px;padding:.85rem 1rem;width:100%;color:var(--navy);box-shadow:inset 4px 4px 8px var(--dk),inset -4px -4px 8px var(--lt)}
+  .field:focus{outline:2px solid var(--red);outline-offset:3px}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+  .muted{color:#5b6b82}
+  .badge-n{display:inline-block;padding:.25rem .8rem;border-radius:999px;font-size:.8rem;font-weight:600;color:var(--red);box-shadow:inset 3px 3px 6px var(--dk),inset -3px -3px 6px var(--lt)}
+</style>
+</head>
+<body>
+
+<!-- Barra móvil -->
+<header class="lg:hidden sticky top-0 z-50 p-3" style="background:var(--base)">
+  <div class="raise px-4 py-2 flex items-center justify-between relative" style="border-radius:18px">
+    <a href="#inicio" class="font-semibold text-lg flex items-center gap-2"><i class="bi bi-hospital text-[var(--red)]"></i> Vita Hogar</a>
+    <button id="burger" class="raise-sm w-11 h-11 grid place-items-center text-2xl" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    <nav id="menu" class="side hidden absolute top-full left-0 right-0 mt-3 raise p-3 grid gap-1" aria-label="Menú móvil"></nav>
+  </div>
+</header>
+
+<div class="flex">
+  <!-- Barra lateral escritorio -->
+  <aside class="hidden lg:flex flex-col w-72 shrink-0 h-screen sticky top-0 p-6">
+    <div class="raise h-full p-5 flex flex-col">
+      <a href="#inicio" class="font-bold text-xl flex items-center gap-3 mb-8"><span class="press w-12 h-12 grid place-items-center text-[var(--red)] text-2xl"><i class="bi bi-hospital"></i></span>Vita Hogar</a>
+      <nav id="sidenav" class="side grid gap-2" aria-label="Principal"></nav>
+      <div class="mt-auto">
+        <p class="text-sm muted mb-3">Síguenos</p>
+        <div class="flex gap-2">
+          <a class="raise-sm w-10 h-10 grid place-items-center" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="raise-sm w-10 h-10 grid place-items-center" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="raise-sm w-10 h-10 grid place-items-center" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="flex-1 min-w-0 p-4 lg:p-8 lg:pl-2">
+
+  <!-- INICIO -->
+  <section id="inicio" class="page">
+    <div class="raise overflow-hidden">
+      <div class="row g-0 align-items-stretch m-0">
+        <div class="col-xl-6 p-8 lg:p-12 flex flex-col justify-center">
+          <span class="badge-n self-start mb-4">Abierto ahora hasta las 21:00</span>
+          <h1 class="text-4xl lg:text-5xl font-semibold leading-tight mb-4">Salud para toda la familia, en un solo mostrador</h1>
+          <p class="muted mb-7">Desde el jarabe del más pequeño hasta el tratamiento de los abuelos: te asesoramos y organizamos todo.</p>
+          <div class="flex flex-wrap gap-4"><a href="#servicios" class="nbtn">Ver servicios</a><a href="#contacto" class="nbtn" style="color:var(--navy)">Cómo llegar</a></div>
+        </div>
+        <div class="col-xl-6 min-h-[300px] bg-gradient-to-br from-stone-300 to-sky-200 relative">
+          <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1200&q=70" alt="Interior de la farmacia con productos ordenados" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 mt-1">
+      <div class="col-md-4"><div class="raise p-6 h-100"><i class="bi bi-people text-3xl text-[var(--red)]"></i><h3 class="font-semibold text-lg mt-2">Atención familiar</h3><p class="muted text-sm">Fichas por persona con alergias y tratamientos.</p></div></div>
+      <div class="col-md-4"><div class="raise p-6 h-100"><i class="bi bi-bell text-3xl text-[var(--red)]"></i><h3 class="font-semibold text-lg mt-2">Avisos de toma</h3><p class="muted text-sm">Recordatorios por mensaje para no olvidar una dosis.</p></div></div>
+      <div class="col-md-4"><div class="raise p-6 h-100"><i class="bi bi-bag-check text-3xl text-[var(--red)]"></i><h3 class="font-semibold text-lg mt-2">Recogida exprés</h3><p class="muted text-sm">Tu pedido preparado y etiquetado con tu nombre.</p></div></div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="page hidden">
+    <h2 class="text-4xl font-semibold mb-6">Servicios</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="raise p-6"><h3 class="font-semibold text-xl mb-2"><i class="bi bi-clipboard2-check text-[var(--red)]"></i> Revisión de medicación</h3><p class="muted">Repasamos todo lo que tomas para evitar duplicidades e interacciones.</p></div>
+      <div class="raise p-6"><h3 class="font-semibold text-xl mb-2"><i class="bi bi-moisture text-[var(--red)]"></i> Control de glucosa</h3><p class="muted">Medición sin cita y guía para el seguimiento diario.</p></div>
+      <div class="raise p-6"><h3 class="font-semibold text-xl mb-2"><i class="bi bi-emoji-smile text-[var(--red)]"></i> Salud bucodental</h3><p class="muted">Cepillos, enjuagues y consejo para toda la familia.</p></div>
+      <div class="raise p-6"><h3 class="font-semibold text-xl mb-2"><i class="bi bi-sun text-[var(--red)]"></i> Fotoprotección</h3><p class="muted">Protectores solares según fototipo y actividad.</p></div>
+      <div class="raise p-6"><h3 class="font-semibold text-xl mb-2"><i class="bi bi-wheelchair text-[var(--red)]"></i> Ortopedia básica</h3><p class="muted">Tobilleras, muñequeras, bastones y andadores.</p></div>
+      <div class="raise p-6"><h3 class="font-semibold text-xl mb-2"><i class="bi bi-virus text-[var(--red)]"></i> Vacunación y viajes</h3><p class="muted">Información sobre botiquín y precauciones antes de viajar.</p></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos" class="page hidden">
+    <h2 class="text-4xl font-semibold mb-6">Catálogo</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-4"><article class="raise p-4 h-100"><div class="press h-40 mb-3 overflow-hidden bg-gradient-to-br from-stone-300 to-sky-200"><img class="w-full h-full object-cover" alt="Vitaminas" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="font-semibold">Complejo vitamínico</h3><p class="muted text-sm">60 comprimidos</p><b>11,20 €</b></article></div>
+      <div class="col-md-6 col-xl-4"><article class="raise p-4 h-100"><div class="press h-40 mb-3 overflow-hidden bg-gradient-to-br from-stone-300 to-rose-200"><img class="w-full h-full object-cover" alt="Cremas" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="font-semibold">Crema de manos reparadora</h3><p class="muted text-sm">75 ml</p><b>6,40 €</b></article></div>
+      <div class="col-md-6 col-xl-4"><article class="raise p-4 h-100"><div class="press h-40 mb-3 overflow-hidden bg-gradient-to-br from-stone-300 to-amber-100"><img class="w-full h-full object-cover" alt="Analgésicos" src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="font-semibold">Termómetro digital</h3><p class="muted text-sm">Lectura en 10 segundos</p><b>9,90 €</b></article></div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="page hidden">
+    <div class="raise p-8 lg:p-12">
+      <h2 class="text-4xl font-semibold mb-4">Quiénes somos</h2>
+      <p class="muted max-w-2xl mb-6">Vita Hogar es una farmacia de barrio con equipo propio y trato directo. Llevamos más de veinte años acompañando a familias en sus cambios de etapa: embarazo, crianza, madurez y cuidado de mayores.</p>
+      <div class="row g-4">
+        <div class="col-md-4"><div class="press p-5 text-center h-100"><i class="bi bi-award text-3xl text-[var(--red)]"></i><p class="font-semibold mt-2">Farmacéuticos colegiados</p></div></div>
+        <div class="col-md-4"><div class="press p-5 text-center h-100"><i class="bi bi-recycle text-3xl text-[var(--red)]"></i><p class="font-semibold mt-2">Envases con punto SIGRE</p></div></div>
+        <div class="col-md-4"><div class="press p-5 text-center h-100"><i class="bi bi-lock text-3xl text-[var(--red)]"></i><p class="font-semibold mt-2">Datos tratados con confidencialidad</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="page hidden">
+    <div class="row g-4">
+      <div class="col-lg-5"><div class="raise p-6 h-100">
+        <h2 class="text-3xl font-semibold mb-4">Contacto</h2>
+        <p class="mb-2"><i class="bi bi-geo-alt text-[var(--red)]"></i> Calle Olivo 17, Sevilla</p>
+        <p class="mb-2"><i class="bi bi-telephone text-[var(--red)]"></i> +34 955 444 555</p>
+        <p class="mb-5"><i class="bi bi-clock text-[var(--red)]"></i> Lun–Vie 9:00–21:00 · Sáb 10:00–14:00</p>
+        <div class="flex gap-2">
+          <a class="raise-sm w-10 h-10 grid place-items-center" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="raise-sm w-10 h-10 grid place-items-center" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="raise-sm w-10 h-10 grid place-items-center" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a class="raise-sm w-10 h-10 grid place-items-center" href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        </div>
+      </div></div>
+      <div class="col-lg-7"><div class="raise p-6 grid gap-4">
+        <input class="field" placeholder="Nombre completo" aria-label="Nombre">
+        <input class="field" type="email" placeholder="Correo electrónico" aria-label="Correo">
+        <textarea class="field" rows="4" placeholder="Mensaje" aria-label="Mensaje"></textarea>
+        <button type="button" class="nbtn justify-self-start" onclick="this.textContent='Enviado, gracias'">Enviar mensaje</button>
+      </div></div>
+    </div>
+  </section>
+
+  <footer class="text-center text-sm muted pt-10 pb-4">© 2026 Farmacia Vita Hogar. Sitio de demostración.</footer>
+  </main>
+</div>
+
+<script>
+  const items=[['inicio','house','Inicio'],['servicios','heart-pulse','Servicios'],['productos','bag','Catálogo'],['nosotros','people','Nosotros'],['contacto','envelope','Contacto']];
+  const html=items.map(([id,ic,t])=>`<a data-nav="${id}" href="#${id}"><i class="bi bi-${ic}"></i>${t}</a>`).join('');
+  document.getElementById('sidenav').innerHTML=html;
+  const m=document.getElementById('menu'),b=document.getElementById('burger');
+  m.innerHTML=html;
+  function setMenu(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',o);b.innerHTML=o?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'}
+  b.addEventListener('click',()=>setMenu(m.classList.contains('hidden')));
+  const pages=[...document.querySelectorAll('.page')];
+  function go(){const h=(location.hash||'#inicio').slice(1),t=pages.some(p=>p.id===h)?h:'inicio';
+    pages.forEach(p=>p.classList.toggle('hidden',p.id!==t));
+    document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===t));
+    setMenu(false);scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+</script>
+</body>
+</html>

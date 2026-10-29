@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Botica Directa | Farmacia de barrio</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta: papel #f3efe3 · lima #c6ff3d · cobalto #2b3cff · tinta #101010 · coral #ff6b4a */
+  body{font-family:'Courier Prime',monospace;background:#f3efe3;color:#101010;font-size:1.05rem}
+  h1,h2,h3,.ab{font-family:'Archivo Black',sans-serif;font-weight:400;letter-spacing:-.02em}
+  .blk{border:3px solid #101010;background:#f3efe3}
+  .shadow-b{box-shadow:6px 6px 0 #101010}
+  .lime{background:#c6ff3d}.cobalt{background:#2b3cff;color:#fff}.coral{background:#ff6b4a}.paper{background:#f3efe3}
+  .nv{font-family:'Archivo Black';padding:.55rem 1rem;border:3px solid #101010;background:#f3efe3;transition:background .1s}
+  .nv:hover{background:#c6ff3d}.nv.active{background:#101010;color:#c6ff3d}
+  .bbtn{display:inline-block;font-family:'Archivo Black';border:3px solid #101010;padding:.8rem 1.4rem;background:#c6ff3d;color:#101010;box-shadow:5px 5px 0 #101010;transition:transform .1s,box-shadow .1s}
+  .bbtn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #101010}
+  .bbtn:active{transform:translate(5px,5px);box-shadow:none}
+  .field{width:100%;border:3px solid #101010;background:#fff;padding:.85rem 1rem}
+  .field:focus{outline:4px solid #2b3cff;outline-offset:2px}
+  a:focus-visible,button:focus-visible{outline:4px solid #2b3cff;outline-offset:3px}
+  .soc{width:50px;height:50px;display:grid;place-items:center;border:3px solid #101010;background:#fff;box-shadow:4px 4px 0 #101010;font-size:1.3rem}
+  .soc:hover{background:#c6ff3d}
+  th,td{border:3px solid #101010;padding:.7rem 1rem}
+  th{background:#101010;color:#c6ff3d;font-family:'Archivo Black';font-weight:400}
+</style>
+</head>
+<body>
+
+<header class="bg-[#f3efe3] border-b-[6px] border-[#101010] sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3 relative">
+    <a href="#inicio" class="ab text-2xl lime border-[3px] border-[#101010] px-3 py-1 shadow-b">BOTICA DIRECTA</a>
+    <nav id="desk" class="hidden md:flex gap-2" aria-label="Principal"></nav>
+    <button id="burger" class="md:hidden border-[3px] border-[#101010] w-12 h-12 grid place-items-center text-3xl lime" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    <nav id="menu" class="hidden absolute top-full left-0 right-0 cobalt border-[3px] border-[#101010] p-3 grid gap-2" aria-label="Menú móvil"></nav>
+  </div>
+</header>
+
+<main>
+
+<!-- INICIO -->
+<section id="inicio" class="page">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <div class="row g-0 m-0 border-[3px] border-[#101010] shadow-b">
+      <div class="col-lg-6 cobalt p-8 md:p-12 flex flex-col justify-between" style="min-height:420px">
+        <h1 class="text-5xl md:text-6xl leading-[.95] mb-6">LA FARMACIA DE TU CALLE, SIN ADORNOS.</h1>
+        <div><p class="mb-6 text-lg">Tratamientos, consejo y productos de higiene a precio justo. Hablamos claro y atendemos rápido.</p><a href="#servicios" class="bbtn me-2 mb-2">VER SERVICIOS</a><a href="#contacto" class="bbtn mb-2" style="background:#fff">CONTACTO</a></div>
+      </div>
+      <div class="col-lg-6 lime border-t-[3px] border-t-[#101010] lg:border-t-0 lg:border-l-[3px] border-l-[#101010] relative" style="min-height:320px">
+        <img class="absolute inset-0 w-full h-full object-cover contrast-125" alt="Farmacéutico en la botica" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1100&q=70" onerror="this.style.display='none'">
+        <div class="absolute bottom-0 left-0 coral border-[3px] border-[#101010] ab px-4 py-2 m-4">DESDE 1998</div>
+      </div>
+    </div>
+    <div class="row g-4 mt-4">
+      <div class="col-md-4"><div class="blk p-5 h-100 shadow-b"><h3 class="text-2xl mb-2">Sin esperas</h3><p>Turno por móvil: ves cuánto falta desde casa.</p></div></div>
+      <div class="col-md-4"><div class="blk lime p-5 h-100 shadow-b"><h3 class="text-2xl mb-2">Precios a la vista</h3><p>Etiquetas claras en cada estante.</p></div></div>
+      <div class="col-md-4"><div class="blk coral p-5 h-100 shadow-b"><h3 class="text-2xl mb-2">Farmacéutico real</h3><p>Siempre hay un titulado en el mostrador.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="page hidden">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-5xl md:text-7xl mb-8">SERVICIOS</h2>
+    <div class="border-[3px] border-[#101010] shadow-b">
+      <div class="flex gap-5 p-5 border-b-[3px] border-[#101010] items-start"><i class="bi bi-file-medical text-4xl"></i><div><h3 class="text-2xl">Dispensación de recetas</h3><p>Papel o electrónica. Validamos la pauta y explicamos cómo tomarla.</p></div></div>
+      <div class="flex gap-5 p-5 border-b-[3px] border-[#101010] items-start lime"><i class="bi bi-speedometer2 text-4xl"></i><div><h3 class="text-2xl">Control de tensión arterial</h3><p>Gratis para clientes. Sin cita.</p></div></div>
+      <div class="flex gap-5 p-5 border-b-[3px] border-[#101010] items-start"><i class="bi bi-box2-heart text-4xl"></i><div><h3 class="text-2xl">Botiquines a medida</h3><p>Para casa, coche, oficina o viaje.</p></div></div>
+      <div class="flex gap-5 p-5 border-b-[3px] border-[#101010] items-start cobalt"><i class="bi bi-eyedropper text-4xl"></i><div><h3 class="text-2xl">Fórmulas magistrales</h3><p>Preparados personalizados por encargo.</p></div></div>
+      <div class="flex gap-5 p-5 items-start coral"><i class="bi bi-bicycle text-4xl"></i><div><h3 class="text-2xl">Reparto a domicilio</h3><p>Lunes a sábado en el mismo barrio.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="page hidden">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-5xl md:text-7xl mb-8">PRODUCTOS Y PRECIOS</h2>
+    <div class="row g-4 mb-8">
+      <div class="col-md-4"><div class="blk shadow-b"><div class="h-44 border-b-[3px] border-[#101010] lime"><img class="w-full h-full object-cover contrast-125" alt="Vitaminas" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><p class="ab p-3">SUPLEMENTOS</p></div></div>
+      <div class="col-md-4"><div class="blk shadow-b"><div class="h-44 border-b-[3px] border-[#101010] cobalt"><img class="w-full h-full object-cover contrast-125" alt="Medicamentos" src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><p class="ab p-3">MEDICAMENTOS</p></div></div>
+      <div class="col-md-4"><div class="blk shadow-b"><div class="h-44 border-b-[3px] border-[#101010] coral"><img class="w-full h-full object-cover contrast-125" alt="Higiene y piel" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><p class="ab p-3">HIGIENE Y PIEL</p></div></div>
+    </div>
+    <div class="overflow-x-auto"><table class="w-full bg-white shadow-b">
+      <thead><tr><th>Producto</th><th>Formato</th><th>Precio</th></tr></thead>
+      <tbody>
+        <tr><td>Paracetamol 1 g</td><td>20 comprimidos</td><td><b>2,10 €</b></td></tr>
+        <tr class="lime"><td>Ibuprofeno 400 mg</td><td>30 comprimidos</td><td><b>3,40 €</b></td></tr>
+        <tr><td>Suero oral</td><td>Caja de 4</td><td><b>5,60 €</b></td></tr>
+        <tr class="lime"><td>Mascarillas FFP2</td><td>Pack de 10</td><td><b>6,00 €</b></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="page hidden">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <div class="row g-4">
+      <div class="col-lg-7"><div class="blk lime p-8 shadow-b h-100"><h2 class="text-5xl mb-4">QUIÉNES SOMOS</h2><p class="mb-3">Botica Directa abrió en 1998 con una idea: que ir a la farmacia sea tan fácil como preguntar a un vecino que sabe.</p><p>Somos cinco personas, tres farmacéuticos y dos técnicos. Cada pedido pasa por manos humanas.</p></div></div>
+      <div class="col-lg-5"><div class="blk cobalt p-8 shadow-b h-100"><h3 class="text-3xl mb-4">NUESTRAS REGLAS</h3><ul class="list-none p-0 m-0 grid gap-3"><li>Explicar antes que vender.</li><li>Precios visibles siempre.</li><li>Si no lo necesitas, te lo decimos.</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="page hidden">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="text-5xl md:text-7xl mb-8">CONTACTO</h2>
+    <div class="row g-4">
+      <div class="col-md-5"><div class="blk coral p-6 shadow-b h-100">
+        <p class="mb-2"><i class="bi bi-geo-alt-fill"></i> Calle Mayor 22, Zaragoza</p>
+        <p class="mb-2"><i class="bi bi-telephone-fill"></i> +34 976 555 000</p>
+        <p class="mb-5"><i class="bi bi-clock-fill"></i> Lun–Sáb 9:00–21:00</p>
+        <div class="flex flex-wrap gap-3">
+          <a class="soc" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a class="soc" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a class="soc" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a class="soc" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div></div>
+      <div class="col-md-7 grid gap-4 content-start">
+        <input class="field" placeholder="Nombre" aria-label="Nombre">
+        <input class="field" type="email" placeholder="Correo" aria-label="Correo">
+        <textarea class="field" rows="4" placeholder="Mensaje" aria-label="Mensaje"></textarea>
+        <button type="button" class="bbtn justify-self-start" onclick="this.textContent='ENVIADO'">ENVIAR</button>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bg-[#101010] text-[#c6ff3d] border-t-[6px] border-[#101010]">
+  <div class="max-w-6xl mx-auto px-4 py-6 flex flex-wrap justify-between gap-3 items-center">
+    <span>© 2026 Botica Directa. Sitio de demostración.</span>
+    <span class="flex gap-4 text-2xl"><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a></span>
+  </div>
+</footer>
+
+<script>
+  const items=[['inicio','INICIO'],['servicios','SERVICIOS'],['productos','PRODUCTOS'],['nosotros','NOSOTROS'],['contacto','CONTACTO']];
+  const link=([i,t])=>`<a class="nv text-center" data-nav="${i}" href="#${i}">${t}</a>`;
+  document.getElementById('desk').innerHTML=items.map(link).join('');
+  const m=document.getElementById('menu'),b=document.getElementById('burger');
+  m.innerHTML=items.map(link).join('');
+  function setMenu(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',o);b.innerHTML=o?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'}
+  b.addEventListener('click',()=>setMenu(m.classList.contains('hidden')));
+  const pages=[...document.querySelectorAll('.page')];
+  function go(){const h=(location.hash||'#inicio').slice(1),t=pages.some(p=>p.id===h)?h:'inicio';
+    pages.forEach(p=>p.classList.toggle('hidden',p.id!==t));
+    document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===t));
+    setMenu(false);scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+</script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farmitas | La farmacia más amable</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta: fondo rosa #fff0f6 · rosa #ffc2dc · lavanda #cdb8ff · menta #b5f0dc · ciruela #4a2b6b */
+  html{scroll-behavior:smooth}
+  body{font-family:'Fredoka',sans-serif;background:#fff0f6;color:#4a2b6b}
+  .clay{border-radius:36px;box-shadow:14px 14px 28px rgba(120,70,150,.22),inset -8px -8px 16px rgba(80,30,110,.12),inset 8px 8px 16px rgba(255,255,255,.75)}
+  .clay-sm{border-radius:22px;box-shadow:7px 7px 14px rgba(120,70,150,.2),inset -4px -4px 8px rgba(80,30,110,.1),inset 4px 4px 8px rgba(255,255,255,.7)}
+  .pink{background:#ffc2dc}.lav{background:#cdb8ff}.mint{background:#b5f0dc}.white{background:#fff}.sun{background:#ffe3a3}
+  .cbtn{display:inline-block;font-weight:600;border-radius:999px;padding:.95rem 2rem;background:#7c4dff;color:#fff;box-shadow:8px 8px 16px rgba(80,40,180,.3),inset -5px -5px 10px rgba(40,10,120,.35),inset 5px 5px 10px rgba(255,255,255,.35);transition:transform .15s}
+  .cbtn:hover{transform:scale(1.04)}.cbtn:active{transform:scale(.97)}
+  .cbtn.alt{background:#fff;color:#4a2b6b;box-shadow:8px 8px 16px rgba(120,70,150,.22),inset -5px -5px 10px rgba(80,30,110,.1),inset 5px 5px 10px #fff}
+  .field{width:100%;border:0;border-radius:22px;padding:1rem 1.2rem;background:#fff;color:#4a2b6b;box-shadow:inset 5px 5px 10px rgba(120,70,150,.2),inset -5px -5px 10px #fff}
+  .field:focus{outline:3px solid #7c4dff;outline-offset:2px}
+  a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #7c4dff;outline-offset:3px}
+  .bubble{position:absolute;border-radius:50%;box-shadow:inset -10px -10px 20px rgba(80,30,110,.15),inset 10px 10px 20px rgba(255,255,255,.7),8px 8px 20px rgba(120,70,150,.2)}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .bob{animation:bob 4s ease-in-out infinite}
+  .blob{border-radius:62% 38% 55% 45% / 48% 58% 42% 52%;overflow:hidden}
+  @media (prefers-reduced-motion:reduce){.bob{animation:none}html{scroll-behavior:auto}.cbtn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="px-4 pt-4 sticky top-0 z-50">
+  <div class="clay lav max-w-6xl mx-auto px-6 py-3 flex items-center justify-between relative" style="border-radius:999px">
+    <a href="#inicio" class="flex items-center gap-2 text-2xl font-bold"><span class="clay-sm pink w-10 h-10 grid place-items-center text-xl"><i class="bi bi-capsule"></i></span>Farmitas</a>
+    <nav id="menu" class="hidden md:flex md:flex-row gap-1 md:gap-6 font-medium absolute md:static top-full left-0 right-0 mt-3 md:mt-0 p-4 md:p-0 clay mint md:!bg-transparent md:!shadow-none text-center">
+      <a class="block px-3 py-2 rounded-full hover:bg-white/60" href="#servicios">Servicios</a>
+      <a class="block px-3 py-2 rounded-full hover:bg-white/60" href="#productos">Productos</a>
+      <a class="block px-3 py-2 rounded-full hover:bg-white/60" href="#pasos">Pedidos</a>
+      <a class="block px-3 py-2 rounded-full hover:bg-white/60" href="#faq">Dudas</a>
+      <a class="block px-3 py-2 rounded-full hover:bg-white/60" href="#contacto">Contacto</a>
+    </nav>
+    <button id="burger" class="md:hidden clay-sm white w-11 h-11 grid place-items-center text-2xl" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="px-4 pt-12 pb-20 relative overflow-hidden">
+  <div class="bubble mint w-24 h-24 top-10 left-6 bob hidden md:block"></div>
+  <div class="bubble sun w-16 h-16 bottom-16 left-1/2 bob hidden md:block" style="animation-delay:1s"></div>
+  <div class="max-w-6xl mx-auto row align-items-center g-5">
+    <div class="col-lg-6">
+      <h1 class="text-5xl md:text-7xl font-bold leading-[1.02] mb-5">La farmacia que te recibe con una sonrisa</h1>
+      <p class="text-xl mb-8 max-w-md" style="color:#6d4f8c">Medicinas, vitaminas y cuidado personal para ti, tu familia y hasta tu mascota.</p>
+      <div class="flex flex-wrap gap-4"><a href="#contacto" class="cbtn">Pedir ahora</a><a href="#servicios" class="cbtn alt">Ver servicios</a></div>
+    </div>
+    <div class="col-lg-6">
+      <div class="relative">
+        <div class="clay pink p-4 blob" style="border-radius:62% 38% 55% 45% / 48% 58% 42% 52%">
+          <div class="blob h-[340px] md:h-[440px] bg-gradient-to-br from-pink-200 to-violet-200"><img class="w-full h-full object-cover" alt="Pastillas de colores sobre fondo claro" src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1000&q=70" onerror="this.style.display='none'"></div>
+        </div>
+        <div class="clay-sm white px-4 py-3 absolute -bottom-4 left-2 bob font-semibold"><i class="bi bi-star-fill text-amber-400"></i> 4,9 en opiniones</div>
+        <div class="clay-sm mint px-4 py-3 absolute top-2 right-0 bob font-semibold" style="animation-delay:.8s"><i class="bi bi-truck"></i> Envío hoy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="px-4 py-16">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold mb-10 text-center">¿En qué te ayudamos?</h2>
+    <div class="row g-4">
+      <div class="col-6 col-lg-3"><div class="clay pink p-6 h-100 text-center"><i class="bi bi-prescription2 text-5xl"></i><h3 class="font-semibold text-xl mt-3">Recetas</h3><p class="text-sm mt-1">Rápidas y sin colas.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="clay lav p-6 h-100 text-center"><i class="bi bi-balloon-heart text-5xl"></i><h3 class="font-semibold text-xl mt-3">Bebés y niños</h3><p class="text-sm mt-1">Dosis a su medida.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="clay mint p-6 h-100 text-center"><i class="bi bi-flower2 text-5xl"></i><h3 class="font-semibold text-xl mt-3">Belleza</h3><p class="text-sm mt-1">Piel cuidada y feliz.</p></div></div>
+      <div class="col-6 col-lg-3"><div class="clay sun p-6 h-100 text-center"><i class="bi bi-piggy-bank text-5xl"></i><h3 class="font-semibold text-xl mt-3">Mascotas</h3><p class="text-sm mt-1">Antiparasitarios y más.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="px-4 py-16">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl md:text-5xl font-bold mb-10 text-center">Favoritos de la semana</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><article class="clay white p-4 h-100"><div class="clay-sm h-48 overflow-hidden mb-4 bg-gradient-to-br from-pink-200 to-violet-200"><img class="w-full h-full object-cover" alt="Vitaminas gominolas" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><h3 class="font-semibold text-xl">Vitaminas masticables</h3><div class="flex justify-between items-center mt-3"><b class="text-2xl text-violet-600">7,90 €</b><button class="cbtn !py-2 !px-4 text-sm">Añadir</button></div></article></div>
+      <div class="col-md-4"><article class="clay white p-4 h-100"><div class="clay-sm h-48 overflow-hidden mb-4 bg-gradient-to-br from-emerald-100 to-violet-200"><img class="w-full h-full object-cover" alt="Crema" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><h3 class="font-semibold text-xl">Crema suave de bebé</h3><div class="flex justify-between items-center mt-3"><b class="text-2xl text-violet-600">5,40 €</b><button class="cbtn !py-2 !px-4 text-sm">Añadir</button></div></article></div>
+      <div class="col-md-4"><article class="clay white p-4 h-100"><div class="clay-sm h-48 overflow-hidden mb-4 bg-gradient-to-br from-amber-100 to-pink-200"><img class="w-full h-full object-cover" alt="Botiquín" src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=700&q=70" onerror="this.style.display='none'"></div><h3 class="font-semibold text-xl">Botiquín familiar</h3><div class="flex justify-between items-center mt-3"><b class="text-2xl text-violet-600">19,90 €</b><button class="cbtn !py-2 !px-4 text-sm">Añadir</button></div></article></div>
+    </div>
+  </div>
+</section>
+
+<!-- PASOS -->
+<section id="pasos" class="px-4 py-16">
+  <div class="max-w-5xl mx-auto clay lav p-8 md:p-12">
+    <h2 class="text-4xl font-bold mb-8 text-center">Pedir es muy fácil</h2>
+    <div class="row g-4 text-center">
+      <div class="col-md-4"><div class="clay-sm white w-16 h-16 grid place-items-center text-2xl font-bold mx-auto mb-3">1</div><h3 class="font-semibold text-xl">Cuéntanos</h3><p>Escríbenos qué necesitas.</p></div>
+      <div class="col-md-4"><div class="clay-sm white w-16 h-16 grid place-items-center text-2xl font-bold mx-auto mb-3">2</div><h3 class="font-semibold text-xl">Preparamos</h3><p>Lo dejamos listo y envuelto.</p></div>
+      <div class="col-md-4"><div class="clay-sm white w-16 h-16 grid place-items-center text-2xl font-bold mx-auto mb-3">3</div><h3 class="font-semibold text-xl">Disfruta</h3><p>Pasa a recogerlo o te lo llevamos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="px-4 py-16">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold mb-8 text-center">Dudas comunes</h2>
+    <details class="clay-sm mint p-5 mb-4"><summary class="font-semibold cursor-pointer text-lg">¿Puedo pedir por WhatsApp?</summary><p class="mt-2">Sí, escríbenos y te respondemos en pocos minutos en horario de apertura.</p></details>
+    <details class="clay-sm pink p-5 mb-4"><summary class="font-semibold cursor-pointer text-lg">¿Venden productos para niños?</summary><p class="mt-2">Claro: pañales, cremas, termómetros y suplementos pediátricos.</p></details>
+    <details class="clay-sm sun p-5"><summary class="font-semibold cursor-pointer text-lg">¿Hay descuentos?</summary><p class="mt-2">Tenemos puntos de fidelidad y ofertas de temporada.</p></details>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="px-4 py-16">
+  <div class="max-w-5xl mx-auto clay pink p-8 md:p-12 row g-5 m-0">
+    <div class="col-md-5">
+      <h2 class="text-4xl font-bold mb-4">¡Escríbenos!</h2>
+      <p class="mb-2"><i class="bi bi-geo-alt-fill"></i> Calle Girasol 3, Bilbao</p>
+      <p class="mb-2"><i class="bi bi-telephone-fill"></i> +34 944 321 654</p>
+      <p class="mb-6"><i class="bi bi-clock-fill"></i> Todos los días 9:00–21:00</p>
+      <div class="flex gap-3">
+        <a class="clay-sm white w-12 h-12 grid place-items-center text-xl" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a class="clay-sm white w-12 h-12 grid place-items-center text-xl" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a class="clay-sm white w-12 h-12 grid place-items-center text-xl" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a class="clay-sm white w-12 h-12 grid place-items-center text-xl" href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="col-md-7 grid gap-4">
+      <input class="field" placeholder="Tu nombre" aria-label="Nombre">
+      <input class="field" type="email" placeholder="Tu correo" aria-label="Correo">
+      <textarea class="field" rows="4" placeholder="¿Qué necesitas?" aria-label="Mensaje"></textarea>
+      <button type="button" class="cbtn justify-self-start" onclick="this.textContent='¡Enviado!'">Enviar mensaje</button>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center py-10 text-sm" style="color:#6d4f8c">© 2026 Farmitas. Sitio de demostración. Lee siempre el prospecto.</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  function setMenu(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',o);b.innerHTML=o?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'}
+  b.addEventListener('click',()=>setMenu(m.classList.contains('hidden')));
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<768)setMenu(false)}));
+</script>
+</body>
+</html>

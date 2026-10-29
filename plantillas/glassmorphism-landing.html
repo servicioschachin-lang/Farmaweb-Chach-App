@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Farmacia Aurora | Salud cerca de ti</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta: tinta #06202a · esmeralda #34d399 · cian #22d3ee · índigo #6366f1 · menta #e8fff7 */
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit',sans-serif;color:#e8fff7;background:#06202a url('https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=1800&q=70') center/cover fixed}
+  body::before{content:"";position:fixed;inset:0;background:linear-gradient(135deg,rgba(6,32,42,.88),rgba(6,60,70,.72) 50%,rgba(40,30,110,.7));z-index:-2}
+  .orb{position:fixed;border-radius:50%;filter:blur(90px);z-index:-1;opacity:.55}
+  .glass{background:rgba(255,255,255,.1);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.26);box-shadow:0 10px 40px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.3);border-radius:26px}
+  .glass-btn{background:linear-gradient(135deg,#34d399,#22d3ee);color:#042a30;font-weight:600;border-radius:999px;padding:.8rem 1.6rem;transition:transform .2s,box-shadow .2s}
+  .glass-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(52,211,153,.45)}
+  .ghost-btn{border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:.8rem 1.6rem;transition:background .2s}
+  .ghost-btn:hover{background:rgba(255,255,255,.15)}
+  .field{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:16px;padding:.8rem 1rem;width:100%}
+  .field::placeholder{color:rgba(232,255,247,.6)}
+  .field:focus{outline:2px solid #34d399;outline-offset:2px}
+  .soc{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;transition:transform .2s,background .2s}
+  .soc:hover{background:rgba(52,211,153,.35);transform:translateY(-3px)}
+  a:focus-visible,button:focus-visible{outline:2px solid #22d3ee;outline-offset:3px}
+  @keyframes drift{from{transform:translateY(0)}to{transform:translateY(-18px)}}
+  .float{animation:drift 5s ease-in-out infinite alternate}
+  @media (prefers-reduced-motion:reduce){.float{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="orb w-72 h-72 bg-emerald-400 -top-10 -left-10"></div>
+<div class="orb w-96 h-96 bg-indigo-500 bottom-0 right-0"></div>
+<div class="orb w-60 h-60 bg-cyan-400 top-1/2 left-1/3"></div>
+
+<!-- NAV -->
+<header class="fixed top-3 inset-x-0 z-50 px-3">
+  <div class="glass max-w-6xl mx-auto px-5 py-3 flex items-center justify-between" style="border-radius:999px">
+    <a href="#inicio" class="flex items-center gap-2 text-xl font-semibold"><i class="bi bi-capsule-pill text-emerald-300"></i> Aurora</a>
+    <nav id="menu" class="hidden md:flex flex-col md:flex-row gap-1 md:gap-7 absolute md:static top-full left-3 right-3 mt-2 md:mt-0 p-4 md:p-0 glass md:!bg-transparent md:!border-0 md:!shadow-none md:!backdrop-blur-none text-center" style="border-radius:26px">
+      <a class="block py-2 hover:text-emerald-300" href="#servicios">Servicios</a>
+      <a class="block py-2 hover:text-emerald-300" href="#productos">Productos</a>
+      <a class="block py-2 hover:text-emerald-300" href="#opiniones">Opiniones</a>
+      <a class="block py-2 hover:text-emerald-300" href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="glass-btn hidden md:inline-block !py-2">Pedir receta</a>
+    <button id="burger" class="md:hidden text-3xl leading-none" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="inicio" class="pt-36 pb-20 px-4">
+  <div class="max-w-6xl mx-auto row align-items-center g-5">
+    <div class="col-lg-7">
+      <p class="glass inline-block px-4 py-1 text-sm mb-4" style="border-radius:999px"><i class="bi bi-clock text-emerald-300"></i> Abierto hoy hasta las 22:00</p>
+      <h1 class="text-5xl md:text-7xl font-semibold leading-[1.05] mb-5">Tu salud, atendida con calma y a tiempo</h1>
+      <p class="text-lg text-emerald-50/80 max-w-xl mb-8">Medicamentos, dermocosmética y asesoría farmacéutica en un solo lugar. Reserva tu pedido por la web y recógelo sin esperas.</p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#contacto" class="glass-btn">Reservar pedido</a>
+        <a href="#servicios" class="ghost-btn">Ver servicios</a>
+      </div>
+    </div>
+    <div class="col-lg-5">
+      <div class="glass p-5 float">
+        <div class="rounded-2xl overflow-hidden mb-4 h-56 bg-gradient-to-br from-emerald-400/40 to-indigo-500/40">
+          <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=900&q=70" alt="Farmacéutica atendiendo a un cliente" class="w-full h-full object-cover" onerror="this.style.display='none'">
+        </div>
+        <label class="text-sm text-emerald-100/80" for="q">Buscar un medicamento</label>
+        <div class="flex gap-2 mt-1"><input id="q" class="field" placeholder="Ej. ibuprofeno 400 mg"><button class="glass-btn !px-4" aria-label="Buscar"><i class="bi bi-search"></i></button></div>
+        <p class="text-sm mt-3 text-emerald-100/70">Turno de guardia: sábados y festivos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-semibold mb-2">Lo que hacemos por ti</h2>
+    <p class="text-emerald-50/70 mb-10 max-w-xl">Atención farmacéutica cercana, sin prisas y con información clara.</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4"><div class="glass p-6 h-100"><i class="bi bi-clipboard2-pulse text-3xl text-emerald-300"></i><h3 class="text-xl font-medium mt-3 mb-1">Dispensación de recetas</h3><p class="text-emerald-50/70">Recetas médicas y electrónicas con revisión de dosis e interacciones.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass p-6 h-100"><i class="bi bi-heart-pulse text-3xl text-cyan-300"></i><h3 class="text-xl font-medium mt-3 mb-1">Control de tensión y glucosa</h3><p class="text-emerald-50/70">Mediciones rápidas en mostrador con seguimiento de resultados.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass p-6 h-100"><i class="bi bi-box-seam text-3xl text-indigo-300"></i><h3 class="text-xl font-medium mt-3 mb-1">Sistemas de dosificación</h3><p class="text-emerald-50/70">Blísters semanales para tomar cada medicina a su hora.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass p-6 h-100"><i class="bi bi-droplet-half text-3xl text-emerald-300"></i><h3 class="text-xl font-medium mt-3 mb-1">Dermocosmética</h3><p class="text-emerald-50/70">Rutinas de cuidado de la piel recomendadas por farmacéuticos.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass p-6 h-100"><i class="bi bi-truck text-3xl text-cyan-300"></i><h3 class="text-xl font-medium mt-3 mb-1">Entrega a domicilio</h3><p class="text-emerald-50/70">Recibe tu pedido en casa el mismo día dentro de la zona.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="glass p-6 h-100"><i class="bi bi-capsule text-3xl text-indigo-300"></i><h3 class="text-xl font-medium mt-3 mb-1">Fórmulas magistrales</h3><p class="text-emerald-50/70">Preparados personalizados elaborados en nuestro laboratorio.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-semibold mb-10">Categorías más pedidas</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><div class="glass overflow-hidden h-100"><div class="h-48 bg-gradient-to-br from-cyan-400/40 to-emerald-400/30"><img class="w-full h-full object-cover" alt="Vitaminas y suplementos" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=70" onerror="this.style.display='none'"></div><div class="p-5"><h3 class="text-xl font-medium">Vitaminas y suplementos</h3><p class="text-emerald-50/70 text-sm">Desde 6,90 €</p></div></div></div>
+      <div class="col-md-4"><div class="glass overflow-hidden h-100"><div class="h-48 bg-gradient-to-br from-indigo-400/40 to-cyan-400/30"><img class="w-full h-full object-cover" alt="Cuidado de la piel" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=70" onerror="this.style.display='none'"></div><div class="p-5"><h3 class="text-xl font-medium">Cuidado de la piel</h3><p class="text-emerald-50/70 text-sm">Desde 9,50 €</p></div></div></div>
+      <div class="col-md-4"><div class="glass overflow-hidden h-100"><div class="h-48 bg-gradient-to-br from-emerald-400/40 to-indigo-400/30"><img class="w-full h-full object-cover" alt="Botiquín y primeros auxilios" src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=800&q=70" onerror="this.style.display='none'"></div><div class="p-5"><h3 class="text-xl font-medium">Botiquín del hogar</h3><p class="text-emerald-50/70 text-sm">Desde 4,20 €</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIONES -->
+<section id="opiniones" class="py-20 px-4">
+  <div class="max-w-6xl mx-auto row g-4">
+    <div class="col-md-6"><figure class="glass p-6 h-100 m-0"><blockquote class="text-lg">Me explicaron cada medicamento con paciencia y me prepararon el pastillero de mi madre. Cambió nuestras mañanas.</blockquote><figcaption class="mt-4 text-emerald-300">Lucía M., cliente desde 2019</figcaption></figure></div>
+    <div class="col-md-6"><figure class="glass p-6 h-100 m-0"><blockquote class="text-lg">Hice el pedido desde el móvil y a la hora estaba listo en el mostrador. Sin colas y con trato amable.</blockquote><figcaption class="mt-4 text-emerald-300">Carlos R., cliente frecuente</figcaption></figure></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-20 px-4">
+  <div class="max-w-5xl mx-auto glass p-6 md:p-10 row g-5 m-0">
+    <div class="col-md-5">
+      <h2 class="text-4xl font-semibold mb-4">Escríbenos</h2>
+      <p class="text-emerald-50/80 mb-2"><i class="bi bi-geo-alt text-emerald-300"></i> Av. de la Salud 123, Centro</p>
+      <p class="text-emerald-50/80 mb-2"><i class="bi bi-telephone text-emerald-300"></i> +34 900 123 456</p>
+      <p class="text-emerald-50/80 mb-5"><i class="bi bi-clock text-emerald-300"></i> Lun–Sáb 9:00–22:00</p>
+      <div class="flex gap-2">
+        <a class="soc glass" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a class="soc glass" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a class="soc glass" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a class="soc glass" href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+        <a class="soc glass" href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="grid gap-3">
+        <input class="field" placeholder="Nombre" aria-label="Nombre">
+        <input class="field" type="email" placeholder="Correo electrónico" aria-label="Correo">
+        <textarea class="field" rows="4" placeholder="¿Qué necesitas?" aria-label="Mensaje"></textarea>
+        <button class="glass-btn justify-self-start" type="button" onclick="this.textContent='Mensaje enviado'">Enviar mensaje</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-center py-8 text-emerald-50/60 text-sm">© 2026 Farmacia Aurora. Sitio de demostración. Consulte siempre a su farmacéutico.</footer>
+
+<script>
+  const b=document.getElementById('burger'),m=document.getElementById('menu');
+  b.addEventListener('click',()=>{const closed=m.classList.toggle('hidden');b.setAttribute('aria-expanded',!closed);b.innerHTML=closed?'<i class="bi bi-list"></i>':'<i class="bi bi-x-lg"></i>'});
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(innerWidth<768){m.classList.add('hidden');b.innerHTML='<i class="bi bi-list"></i>'}}));
+</script>
+</body>
+</html>

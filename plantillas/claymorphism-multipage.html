@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Doctor Pastilla | Farmacia y parafarmacia</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  /* Paleta: crema solar #fff8dc · amarillo #ffd93d · cielo #8ecae6 · naranja #ff9f45 · azul tinta #12456b */
+  body{font-family:'Quicksand',sans-serif;background:#fff8dc;color:#12456b;font-weight:500}
+  h1,h2,h3,.brand{font-family:'Baloo 2',sans-serif}
+  .clay{border-radius:40px;box-shadow:12px 12px 24px rgba(18,69,107,.2),inset -8px -8px 16px rgba(18,69,107,.14),inset 8px 8px 16px rgba(255,255,255,.7)}
+  .clay-sm{border-radius:24px;box-shadow:6px 6px 12px rgba(18,69,107,.2),inset -4px -4px 8px rgba(18,69,107,.12),inset 4px 4px 8px rgba(255,255,255,.65)}
+  .yel{background:#ffd93d}.sky{background:#8ecae6}.org{background:#ff9f45}.wht{background:#fffdf5}.ink{background:#12456b;color:#fff}
+  .cbtn{display:inline-block;font-family:'Baloo 2';font-weight:700;font-size:1.1rem;padding:.7rem 1.8rem;border-radius:999px;background:#ff9f45;color:#fff;box-shadow:7px 7px 14px rgba(180,80,0,.3),inset -5px -5px 10px rgba(150,60,0,.3),inset 5px 5px 10px rgba(255,255,255,.4);transition:transform .15s}
+  .cbtn:hover{transform:translateY(-3px) rotate(-1deg)}.cbtn:active{transform:scale(.96)}
+  .tab{font-family:'Baloo 2';font-weight:700;padding:.45rem 1.1rem;border-radius:999px;transition:background .15s}
+  .tab:hover{background:rgba(255,255,255,.6)}
+  .tab.active{background:#12456b;color:#fff;box-shadow:inset 3px 3px 6px rgba(0,0,0,.35)}
+  .field{width:100%;border:0;border-radius:24px;padding:1rem 1.2rem;background:#fffdf5;color:#12456b;box-shadow:inset 5px 5px 10px rgba(18,69,107,.2),inset -5px -5px 10px #fff}
+  .field:focus{outline:3px solid #ff9f45;outline-offset:2px}
+  a:focus-visible,button:focus-visible{outline:3px solid #12456b;outline-offset:3px}
+  .page{animation:pop .35s ease}
+  @keyframes pop{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.page{animation:none}.cbtn{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="px-3 pt-3 sticky top-0 z-50">
+  <div class="clay sky max-w-5xl mx-auto px-5 py-2 flex items-center justify-between relative" style="border-radius:999px">
+    <a href="#inicio" class="brand text-2xl font-extrabold flex items-center gap-2"><span class="clay-sm yel w-10 h-10 grid place-items-center"><i class="bi bi-emoji-sunglasses"></i></span>Doctor Pastilla</a>
+    <nav id="desk" class="hidden md:flex gap-1" aria-label="Principal"></nav>
+    <button id="burger" class="md:hidden clay-sm wht w-11 h-11 grid place-items-center text-2xl" aria-label="Abrir menú" aria-expanded="false"><i class="bi bi-list"></i></button>
+    <nav id="menu" class="hidden absolute top-full left-0 right-0 mt-3 clay yel p-4 grid gap-2 text-center" aria-label="Menú móvil"></nav>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 pb-16">
+
+<!-- INICIO -->
+<section id="inicio" class="page pt-12">
+  <div class="text-center max-w-3xl mx-auto">
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-[.98] mb-4">Tu botiquín feliz empieza aquí</h1>
+    <p class="text-lg mb-6">Medicamentos, higiene y bienestar con consejo de verdad. Pasa a vernos o pide desde casa.</p>
+    <a href="#productos" class="cbtn me-2">Ver productos</a><a href="#contacto" class="cbtn" style="background:#12456b;box-shadow:7px 7px 14px rgba(18,69,107,.35),inset -5px -5px 10px rgba(0,0,0,.3),inset 5px 5px 10px rgba(255,255,255,.2)">Contactar</a>
+  </div>
+  <div class="clay yel p-4 mt-12">
+    <div class="rounded-[28px] overflow-hidden h-[260px] md:h-[420px] bg-gradient-to-br from-sky-200 to-amber-200"><img class="w-full h-full object-cover" alt="Farmacéutico mostrando un producto" src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=1600&q=70" onerror="this.style.display='none'"></div>
+  </div>
+  <div class="row g-4 mt-2 text-center">
+    <div class="col-md-4"><div class="clay-sm sky p-5 h-100"><i class="bi bi-cash-coin text-4xl"></i><h3 class="text-2xl font-bold mt-1">Precios claros</h3><p>Sin letra pequeña ni sorpresas.</p></div></div>
+    <div class="col-md-4"><div class="clay-sm org p-5 h-100"><i class="bi bi-lightning-charge text-4xl"></i><h3 class="text-2xl font-bold mt-1">Pedido veloz</h3><p>Listo en 30 minutos.</p></div></div>
+    <div class="col-md-4"><div class="clay-sm yel p-5 h-100"><i class="bi bi-chat-smile text-4xl"></i><h3 class="text-2xl font-bold mt-1">Consejo cercano</h3><p>Hablamos sin tecnicismos.</p></div></div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="page hidden pt-12">
+  <h2 class="text-5xl font-extrabold mb-8 text-center">Nuestros servicios</h2>
+  <div class="row g-4">
+    <div class="col-md-6"><div class="clay sky p-6 h-100 flex gap-4 items-center"><i class="bi bi-capsule-pill text-5xl"></i><div><h3 class="text-2xl font-bold">Dispensación</h3><p>Con y sin receta, siempre con asesoría.</p></div></div></div>
+    <div class="col-md-6"><div class="clay yel p-6 h-100 flex gap-4 items-center"><i class="bi bi-droplet text-5xl"></i><div><h3 class="text-2xl font-bold">Test y pruebas</h3><p>Embarazo, glucosa, colesterol y más.</p></div></div></div>
+    <div class="col-md-6"><div class="clay org p-6 h-100 flex gap-4 items-center"><i class="bi bi-person-arms-up text-5xl"></i><div><h3 class="text-2xl font-bold">Salud infantil</h3><p>Jarabes, pañales, cremas y chupetes.</p></div></div></div>
+    <div class="col-md-6"><div class="clay wht p-6 h-100 flex gap-4 items-center"><i class="bi bi-eyeglasses text-5xl"></i><div><h3 class="text-2xl font-bold">Cuidado visual</h3><p>Lágrimas artificiales y limpieza de lentes.</p></div></div></div>
+    <div class="col-md-6"><div class="clay yel p-6 h-100 flex gap-4 items-center"><i class="bi bi-moon-stars text-5xl"></i><div><h3 class="text-2xl font-bold">Descanso</h3><p>Soluciones naturales para dormir mejor.</p></div></div></div>
+    <div class="col-md-6"><div class="clay sky p-6 h-100 flex gap-4 items-center"><i class="bi bi-bicycle text-5xl"></i><div><h3 class="text-2xl font-bold">Reparto en bici</h3><p>Entrega ecológica en el barrio.</p></div></div></div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos" class="page hidden pt-12">
+  <h2 class="text-5xl font-extrabold mb-8 text-center">Productos</h2>
+  <div class="row g-4">
+    <div class="col-6 col-md-4"><article class="clay-sm wht p-3 h-100"><div class="rounded-[18px] overflow-hidden h-36 mb-3 bg-gradient-to-br from-amber-200 to-sky-200"><img class="w-full h-full object-cover" alt="Vitaminas" src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="text-xl font-bold">Vitamina D</h3><p class="font-bold text-orange-500 text-lg">6,80 €</p></article></div>
+    <div class="col-6 col-md-4"><article class="clay-sm wht p-3 h-100"><div class="rounded-[18px] overflow-hidden h-36 mb-3 bg-gradient-to-br from-sky-200 to-orange-200"><img class="w-full h-full object-cover" alt="Gel" src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="text-xl font-bold">Gel de manos</h3><p class="font-bold text-orange-500 text-lg">2,50 €</p></article></div>
+    <div class="col-6 col-md-4"><article class="clay-sm wht p-3 h-100"><div class="rounded-[18px] overflow-hidden h-36 mb-3 bg-gradient-to-br from-orange-200 to-amber-200"><img class="w-full h-full object-cover" alt="Pastillas" src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="text-xl font-bold">Antigripal</h3><p class="font-bold text-orange-500 text-lg">5,90 €</p></article></div>
+    <div class="col-6 col-md-4"><article class="clay-sm wht p-3 h-100"><div class="rounded-[18px] overflow-hidden h-36 mb-3 bg-gradient-to-br from-amber-200 to-sky-200"><img class="w-full h-full object-cover" alt="Tiritas" src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="text-xl font-bold">Tiritas surtidas</h3><p class="font-bold text-orange-500 text-lg">3,20 €</p></article></div>
+    <div class="col-6 col-md-4"><article class="clay-sm wht p-3 h-100"><div class="rounded-[18px] overflow-hidden h-36 mb-3 bg-gradient-to-br from-sky-200 to-orange-200"><img class="w-full h-full object-cover" alt="Termómetro" src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="text-xl font-bold">Termómetro</h3><p class="font-bold text-orange-500 text-lg">9,90 €</p></article></div>
+    <div class="col-6 col-md-4"><article class="clay-sm wht p-3 h-100"><div class="rounded-[18px] overflow-hidden h-36 mb-3 bg-gradient-to-br from-orange-200 to-sky-200"><img class="w-full h-full object-cover" alt="Protector solar" src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=600&q=70" onerror="this.style.display='none'"></div><h3 class="text-xl font-bold">Protector solar</h3><p class="font-bold text-orange-500 text-lg">13,40 €</p></article></div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="page hidden pt-12">
+  <div class="clay sky p-8 md:p-12 text-center">
+    <h2 class="text-5xl font-extrabold mb-4">Somos tu farmacia de siempre, con más color</h2>
+    <p class="max-w-2xl mx-auto text-lg">Un equipo joven y titulado que mezcla ciencia con buen humor. Creemos que ir a la farmacia no tiene por qué ser aburrido ni intimidante.</p>
+  </div>
+  <div class="row g-4 mt-1 text-center">
+    <div class="col-md-4"><div class="clay-sm yel p-5"><b class="brand text-5xl block">25</b>años de experiencia</div></div>
+    <div class="col-md-4"><div class="clay-sm org p-5"><b class="brand text-5xl block">8</b>profesionales</div></div>
+    <div class="col-md-4"><div class="clay-sm wht p-5"><b class="brand text-5xl block">1</b>misión: cuidarte</div></div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="page hidden pt-12">
+  <div class="clay yel p-8 md:p-12 row g-5 m-0">
+    <div class="col-md-5">
+      <h2 class="text-5xl font-extrabold mb-4">Habla con nosotros</h2>
+      <p class="mb-2"><i class="bi bi-geo-alt-fill"></i> Paseo del Mar 90, Málaga</p>
+      <p class="mb-2"><i class="bi bi-telephone-fill"></i> +34 952 700 800</p>
+      <p class="mb-5"><i class="bi bi-clock-fill"></i> Lun–Sáb 9:00–21:00</p>
+      <div class="flex gap-3">
+        <a class="clay-sm wht w-12 h-12 grid place-items-center text-xl" href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a class="clay-sm wht w-12 h-12 grid place-items-center text-xl" href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a class="clay-sm wht w-12 h-12 grid place-items-center text-xl" href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        <a class="clay-sm wht w-12 h-12 grid place-items-center text-xl" href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      </div>
+    </div>
+    <div class="col-md-7 grid gap-4">
+      <input class="field" placeholder="Nombre" aria-label="Nombre">
+      <input class="field" type="email" placeholder="Correo" aria-label="Correo">
+      <textarea class="field" rows="4" placeholder="Mensaje" aria-label="Mensaje"></textarea>
+      <button type="button" class="cbtn justify-self-start" onclick="this.textContent='¡Mensaje enviado!'">Enviar</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="text-center pb-10 text-sm">© 2026 Doctor Pastilla. Sitio de demostración.</footer>
+
+<script>
+  const items=[['inicio','Inicio'],['servicios','Servicios'],['productos','Productos'],['nosotros','Nosotros'],['contacto','Contacto']];
+  document.getElementById('desk').innerHTML=items.map(([i,t])=>`<a class="tab" data-nav="${i}" href="#${i}">${t}</a>`).join('');
+  const m=document.getElementById('menu'),b=document.getElementById('burger');
+  m.innerHTML=items.map(([i,t])=>`<a class="tab" data-nav="${i}" href="#${i}">${t}</a>`).join('');
+  function setMenu(o){m.classList.toggle('hidden',!o);b.setAttribute('aria-expanded',o);b.innerHTML=o?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'}
+  b.addEventListener('click',()=>setMenu(m.classList.contains('hidden')));
+  const pages=[...document.querySelectorAll('.page')];
+  function go(){const h=(location.hash||'#inicio').slice(1),t=pages.some(p=>p.id===h)?h:'inicio';
+    pages.forEach(p=>p.classList.toggle('hidden',p.id!==t));
+    document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===t));
+    setMenu(false);scrollTo(0,0)}
+  addEventListener('hashchange',go);go();
+</script>
+</body>
+</html>
